@@ -23,5 +23,5 @@ app.post('/generate-payu-hash', (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(\`✅ PayU Hash API running on http://localhost:\${port}\`);
+  console.log(`✅ PayU Hash API running on http://localhost:${port}`);
 });
