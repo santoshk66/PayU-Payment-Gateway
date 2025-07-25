@@ -15,7 +15,7 @@ app.post('/generate-payu-hash', (req, res) => {
     return res.status(400).json({ error: 'Missing fields' });
   }
 
-  const hashString = \`\${PAYU_MERCHANT_KEY}|\${txnid}|\${amount}|\${productinfo}|\${firstname}|\${email}|||||||||||\${PAYU_MERCHANT_SALT}\`;
+  const hashString = `${PAYU_MERCHANT_KEY}|${txnid}|${amount}|${productinfo}|${firstname}|${email}|||||||||||${PAYU_MERCHANT_SALT}`;
   const hash = crypto.createHash('sha512').update(hashString).digest('hex');
 
   res.json({ hash });
